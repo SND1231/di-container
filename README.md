@@ -7,10 +7,19 @@
 docker-compose build
 docker-compose up
 
+# コンテナ名(NAMES)を取得
+docker ps
+
+# コンテナに入る
+docker exec -it {コンテナ名} sh
+
+# コードテストに実行権限付与
+chmod 777 ./test.sh
+
 # コードテスト実行
 ./test.sh
 
-# 実際にS3に送られているか確認したい場合、AWSの設定をする
+# 実際にS3に送られているか確認したい場合、AWSの認証情報を設定する
 aws configure
 
 # ファイルをS3に転送(同ディレクトリにあるsample.txtを試しに使用可能)
