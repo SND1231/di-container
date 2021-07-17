@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+  di:
+    tty: true
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile
+    working_dir: /go/src/github.com/SND1231/dip-test
+    ports:
+      - "9003:9003"
+    volumes:
+      - ./src:/go/src/github.com/SND1231/dip-test
+      - ~/.aws/config:/root/.aws/config
+    environment:
+      AWS_REGION: ap-northeast-1
