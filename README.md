@@ -13,11 +13,8 @@ docker ps
 # コンテナに入る
 docker exec -it {コンテナ名} sh
 
-# コードテストに実行権限付与
-chmod 777 ./test.sh
-
-# コードテスト実行
-./test.sh
+# テスト実行
+make test
 
 # 実際にS3に送られているか確認したい場合、AWSの認証情報を設定する
 aws configure
